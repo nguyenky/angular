@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="nested-repeat">
+<head>
+	<meta charset="utf-8">
+    <title>My HTML File</title>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../module/nested-repeat.js"></script>
+    <script src="../controller/nestedRepeatController.js"></script>
+</head>
+<body>
+	<div ng-controller="nestedRepeatController">
+		<ul>
+			<li ng-repeat="country in countries">
+				{{country.name}}
+				<ul>
+					<li ng-repeat="city in countries">
+						{{city.name}}
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

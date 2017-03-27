@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="Filter">
+<head>
+	<meta charset="utf-8">
+    <title>Handle Event</title>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../module/filter.js"></script>
+    <script src="../controller/filterController.js"></script>
+</head>
+<body>
+	<div ng-controller="filterController">
+	Show: <input type="number" name="" ng-model="limitRow">
+		<table class="table">
+			<tr>
+				<th width="100px">Name</th>
+				<th width="100px">Date of Birth</th>
+				<th width="100px">Skill</th>
+				<th width="100px">Status</th>
+			</tr>
+			<tbody>
+				<tr ng-repeat="technology in employee | limitTo:limitRow">
+					<td>{{technology.name | uppercase}}</td>
+					<td>{{technology.birthDate | date:"dd/MM/yyyy"}}</td>
+					<td>{{technology.skill}}</td>
+					<td>{{technology.stutus | status}}</td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

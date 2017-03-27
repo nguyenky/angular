@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="handle-event">
+<head>
+	<meta charset="utf-8">
+    <title>Handle Event</title>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../module/handle-event.js"></script>
+    <script src="../controller/handleEventController.js"></script>
+</head>
+<body>
+	<div ng-controller="handleEventController">
+		<table>
+			<tr>
+				<th width="100px">Name</th>
+				<th width="100px">Likes</th>
+				<th width="100px">Dislike</th>
+				<th width="200px">Action</th>
+			</tr>
+			<tbody>
+				<tr ng-repeat="technology in technolies">
+					<td>{{technology.name}}</td>
+					<td>{{technology.likes}}</td>
+					<td>{{technology.dislikes}}</td>
+					<td>
+						<button ng-click="increaseLike(technology)">Like</button>
+						<button ng-click="increaseDislike(technology)">Dislike</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
